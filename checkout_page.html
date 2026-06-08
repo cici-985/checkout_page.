@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>旧模式识别地图 | 给高敏女性的入口</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'warm-cream': '#FAF8F5',
+            'soft-stone': '#F5F1ED',
+            'deep-green': '#3D4A3A',
+            'warm-brown': '#A67B5B',
+            'soft-brown': '#8C6B5D',
+            'text-main': '#2C2C2C',
+            'text-sub': '#5A5A5A',
+            'border-light': '#E5E0DA',
+          },
+          fontFamily: {
+            'serif': ['"Noto Serif SC"', 'serif'],
+            'sans': ['"Noto Sans SC"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Noto Sans SC', sans-serif;
+      background-color: #FAF8F5;
+      color: #2C2C2C;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Noto Serif SC', serif;
+    }
+    .scroll-indicator {
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+      40% {transform: translateY(-10px);}
+      60% {transform: translateY(-5px);}
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-out;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+    }
+    .faq-item.active svg {
+      transform: rotate(180deg);
+    }
+    .pdf-card {
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .pdf-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+    .order-bump-checkbox:checked + .order-bump-content {
+      border-color: #A67B5B;
+      background-color: #FDFBF9;
+    }
+    .order-bump-checkbox:checked + .order-bump-content .check-circle {
+      background-color: #A67B5B;
+      border-color: #A67B5B;
+    }
+    .check-circle svg {
+      display: none;
+    }
+    .order-bump-checkbox:checked + .order-bump-content .check-circle svg {
+      display: block;
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- 顶部极简导航 -->
+  <nav class="w-full py-6 px-6 md:px-12 flex justify-between items-center bg-warm-cream/80 backdrop-blur-sm sticky top-0 z-50 border-b border-border-light">
+    <div class="text-lg font-serif font-semibold text-deep-green tracking-wide">旧模式识别地图</div>
+    <div class="text-sm text-text-sub">Mini Offer</div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="min-h-[90vh] flex flex-col justify-center items-center px-6 md:px-12 pt-12 pb-20 text-center">
+    <div class="max-w-3xl mx-auto space-y-8">
+      <div class="space-y-4">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-deep-green leading-tight tracking-tight">
+          真正让你重复的，<br>不是性格，也不是能力
+        </h1>
+        <p class="text-lg md:text-xl text-text-sub font-light leading-relaxed max-w-2xl mx-auto">
+          一份给高敏女性的旧模式识别地图，帮你第一次系统地看见：<br class="hidden md:block">为什么你总在相似的地方卡住
+        </p>
+      </div>
+
+      <!-- 产品 Mockup -->
+      <div class="relative w-full max-w-md mx-auto h-64 md:h-80 my-8">
+        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-48 h-64 bg-white rounded shadow-lg border border-border-light rotate-[-6deg] z-10 flex items-center justify-center">
+          <div class="text-center p-4">
+            <div class="text-3xl font-serif text-deep-green mb-2">01</div>
+            <div class="text-xs text-text-sub">人生模式</div>
+          </div>
+        </div>
+        <div class="absolute top-2 left-1/2 transform -translate-x-1/2 w-48 h-64 bg-white rounded shadow-lg border border-border-light rotate-[-3deg] z-20 flex items-center justify-center">
+          <div class="text-center p-4">
+            <div class="text-3xl font-serif text-deep-green mb-2">02</div>
+            <div class="text-xs text-text-sub">旧循环</div>
+          </div>
+        </div>
+        <div class="absolute top-4 left-1/2 transform -translate-x-1/2 w-48 h-64 bg-white rounded shadow-lg border border-border-light rotate-[0deg] z-30 flex items-center justify-center">
+          <div class="text-center p-4">
+            <div class="text-3xl font-serif text-deep-green mb-2">03</div>
+            <div class="text-xs text-text-sub">旧模式</div>
+          </div>
+        </div>
+        <div class="absolute top-6 left-1/2 transform -translate-x-1/2 w-48 h-64 bg-white rounded shadow-lg border border-border-light rotate-[3deg] z-40 flex items-center justify-center">
+          <div class="text-center p-4">
+            <div class="text-3xl font-serif text-deep-green mb-2">04</div>
+            <div class="text-xs text-text-sub">旧伤根</div>
+          </div>
+        </div>
+        <div class="absolute top-8 left-1/2 transform -translate-x-1/2 w-48 h-64 bg-white rounded shadow-xl border border-border-light rotate-[6deg] z-50 flex items-center justify-center bg-gradient-to-br from-white to-soft-stone">
+          <div class="text-center p-4">
+            <div class="text-3xl font-serif text-deep-green mb-2">05</div>
+            <div class="text-xs text-text-sub">卡点层级</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-2xl md:text-3xl font-serif text-deep-green font-semibold">¥XXX</div>
+
+      <button onclick="document.getElementById('content').scrollIntoView({behavior: 'smooth'})" 
+              class="group inline-flex items-center gap-2 px-8 py-4 bg-deep-green text-warm-cream rounded-full text-lg font-medium transition-all hover:bg-opacity-90 hover:shadow-lg">
+        向下滚动，了解详情
+        <svg class="w-5 h-5 scroll-indicator group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- 主体内容 -->
+  <main id="content" class="max-w-4xl mx-auto px-6 md:px-12 py-16 space-y-24">
+
+    <!-- 共鸣段 -->
+    <section class="space-y-6">
+      <div class="w-12 h-1 bg-warm-brown mb-8"></div>
+      <div class="prose prose-lg max-w-none text-text-main leading-loose space-y-6">
+        <p class="text-lg md:text-xl">
+          很多时候，你以为是自己性格不好、不够坚定、或者"就是这样的人"。但真相可能是：你里面有一套太熟、太自动的旧反应系统，它一直在替你选择最熟悉的路——哪怕那条路已经让你很累、很痛。
+        </p>
+        <p class="text-lg md:text-xl">
+          你不是没有努力过。你学了很多、承担了很多、感受了很多。但当你回到真实的关系、压力和选择面前，身体和情绪总是比理性更快。然后你再次自责，再次困惑，再次觉得自己<span class="font-semibold text-deep-green">"怎么又这样"</span>。
+        </p>
+        <p class="text-lg md:text-xl bg-soft-stone/50 p-6 rounded-lg border-l-4 border-warm-brown italic">
+          这个 mini offer 要做的，不是给你更多道理，而是帮你把这套混乱、羞耻、自责的内在经验，整理成一张可以命名、可以定位、可以开始松动的结构地图。
+        </p>
+      </div>
+    </section>
+
+    <!-- 适合谁 / 不适合谁 -->
+    <section class="grid md:grid-cols-2 gap-8">
+      <!-- 适合谁 -->
+      <div class="bg-white p-8 rounded-xl border border-border-light shadow-sm">
+        <h3 class="text-2xl font-serif font-semibold text-deep-green mb-6 flex items-center gap-2">
+          <span class="w-8 h-8 rounded-full bg-deep-green text-white flex items-center justify-center text-sm">✓</span>
+          这个产品适合谁
+        </h3>
+        <ul class="space-y-4 text-text-main">
+          <li class="flex items-start gap-3">
+            <span class="text-warm-brown mt-1">◦</span>
+            <span>你能感知到气氛变了，但说不出哪里变了，然后你开始内耗：是不是我又做错了什么</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-warm-brown mt-1">◦</span>
+            <span>你已经很努力了，但一到关键时刻，身体和情绪总是比理性更快做出反应，事后又反复自责</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-warm-brown mt-1">◦</span>
+            <span>你收藏了很多道理、上过不少课，但真到那个场景，那些话还是用不上，你又开始觉得"我就是这样的人"</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-warm-brown mt-1">◦</span>
+            <span>你不是不想变好，你只是厌倦了在错误的位置上继续用力——修情绪、修关系、修自己，却不知道为什么总在同一个地方回来</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-warm-brown mt-1">◦</span>
+            <span>你想要的不只是被安慰，而是有人能把你混乱、羞耻、自责的内在经验，讲清楚、讲出结构</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 不适合谁 - 优化版 -->
+      <div class="bg-white p-8 rounded-xl border border-border-light shadow-sm opacity-90">
+        <h3 class="text-2xl font-serif font-semibold text-text-sub mb-6 flex items-center gap-2">
+          <span class="w-8 h-8 rounded-full bg-text-sub text-white flex items-center justify-center text-sm">✕</span>
+          这个产品不适合谁
+        </h3>
+        <ul class="space-y-4 text-text-sub">
+          <li class="flex items-start gap-3">
+            <span class="text-gray-400 mt-1">◦</span>
+            <span>你正在寻找一个能"立刻彻底改变人生"的快速方案，而不是愿意先停下来，看清楚自己到底被什么旧系统牵着走</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-gray-400 mt-1">◦</span>
+            <span>你更想要被安慰"你已经很好了"，而不愿意面对：那些让你反复卡住的，可能不是性格问题，而是一套你还没命名的旧模式</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-gray-400 mt-1">◦</span>
+            <span>你期待有人替你修好一切，而不是自己拿起一张地图，开始辨认自己现在站在哪一层</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-gray-400 mt-1">◦</span>
+            <span>你对"女王觉醒""能量爆发""显化丰盛"更感兴趣，而不是想老老实实看懂自己里面那套太熟、太自动的反应系统</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-gray-400 mt-1">◦</span>
+            <span>你觉得"看清问题"太痛、太麻烦，宁愿继续用"我性格就这样"来解释一切，也不想开始松动它</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 购买结果 -->
+    <section class="bg-gradient-to-br from-soft-stone to-warm-cream p-8 md:p-12 rounded-2xl border border-border-light">
+      <h2 class="text-3xl font-serif font-bold text-deep-green mb-4">购买后，你会得到什么</h2>
+      <p class="text-text-sub mb-8 text-lg">你不会得到"立刻重生"的承诺。你会得到的是：</p>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full bg-deep-green/10 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-deep-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+          </div>
+          <p class="text-text-main">更清楚地看见自己为什么总在相似的地方重复</p>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full bg-deep-green/10 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-deep-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+          </div>
+          <p class="text-text-main">能区分：现在接管自己的，是真实的你，还是旧模式</p>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full bg-deep-green/10 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-deep-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+          </div>
+          <p class="text-text-main">判断自己更容易被恐惧、控制，还是价值感循环牵着走</p>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full bg-deep-green/10 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-deep-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11"></path></svg>
+          </div>
+          <p class="text-text-main">认出自己最常掉进的旧模式，而不是继续觉得自己混乱、矛盾、坏掉了</p>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full bg-deep-green/10 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-deep-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <p class="text-text-main">初步看见自己最深的旧伤根更接近哪一种</p>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full bg-deep-green/10 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-deep-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+          </div>
+          <p class="text-text-main">知道自己现在主要卡在哪一层，停止在错误的位置上继续用力</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 产品包含内容 -->
+    <section>
+      <h2 class="text-3xl font-serif font-bold text-deep-green mb-2">产品包含内容</h2>
+      <p class="text-text-sub mb-10">5 份递进 PDF 指南，从看见到定位</p>
+
+      <div class="space-y-4">
+        <div class="pdf-card bg-white p-6 md:p-8 rounded-xl border border-border-light flex flex-col md:flex-row gap-6 items-start">
+          <div class="w-16 h-16 bg-deep-green text-white rounded-lg flex items-center justify-center text-2xl font-serif font-bold flex-shrink-0">01</div>
+          <div>
+            <h3 class="text-xl font-serif font-semibold text-deep-green mb-2">《为什么你总是在重复同一种人生模式？》</h3>
+            <p class="text-text-sub leading-relaxed">停止把问题简单归因于性格或能力。看见困住你的，是一套太熟、太自动的旧模式。</p>
+          </div>
+        </div>
+
+        <div class="pdf-card bg-white p-6 md:p-8 rounded-xl border border-border-light flex flex-col md:flex-row gap-6 items-start">
+          <div class="w-16 h-16 bg-deep-green text-white rounded-lg flex items-center justify-center text-2xl font-serif font-bold flex-shrink-0">02</div>
+          <div>
+            <h3 class="text-xl font-serif font-semibold text-deep-green mb-2">《你最容易掉进哪一种旧循环？》</h3>
+            <p class="text-text-sub leading-relaxed">识别你的主循环与副循环：恐惧循环、控制循环、价值感循环。</p>
+          </div>
+        </div>
+
+        <div class="pdf-card bg-white p-6 md:p-8 rounded-xl border border-border-light flex flex-col md:flex-row gap-6 items-start">
+          <div class="w-16 h-16 bg-deep-green text-white rounded-lg flex items-center justify-center text-2xl font-serif font-bold flex-shrink-0">03</div>
+          <div>
+            <h3 class="text-xl font-serif font-semibold text-deep-green mb-2">《你最常掉进哪几种旧模式？》</h3>
+            <p class="text-text-sub leading-relaxed">把旧循环落到日常：害怕开始、过度预想、必须做好、过度承担、不会拒绝、接不住好东西等 8 种常见表现。</p>
+          </div>
+        </div>
+
+        <div class="pdf-card bg-white p-6 md:p-8 rounded-xl border border-border-light flex flex-col md:flex-row gap-6 items-start">
+          <div class="w-16 h-16 bg-deep-green text-white rounded-lg flex items-center justify-center text-2xl font-serif font-bold flex-shrink-0">04</div>
+          <div>
+            <h3 class="text-xl font-serif font-semibold text-deep-green mb-2">《你最深的旧伤根，藏在哪里？》</h3>
+            <p class="text-text-sub leading-relaxed">看见表面问题背后的深层根源——"第一块石头"：不够好、我是不是哪里不对、我不值得、我会被丢下。</p>
+          </div>
+        </div>
+
+        <div class="pdf-card bg-white p-6 md:p-8 rounded-xl border border-border-light flex flex-col md:flex-row gap-6 items-start">
+          <div class="w-16 h-16 bg-deep-green text-white rounded-lg flex items-center justify-center text-2xl font-serif font-bold flex-shrink-0">05</div>
+          <div>
+            <h3 class="text-xl font-serif font-semibold text-deep-green mb-2">《你现在最主要卡在哪一层？》</h3>
+            <p class="text-text-sub leading-relaxed">定位你现在的卡点：触发层、反应层、身份层，还是深层根源层。知道下一步该从哪里开始，而不是乱修。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 购买理由 -->
+    <section class="text-center max-w-3xl mx-auto">
+      <h2 class="text-3xl font-serif font-bold text-deep-green mb-8">为什么现在适合开始</h2>
+      <div class="space-y-6 text-lg text-text-main leading-relaxed text-left">
+        <p>你走到这里，不是因为你不够努力。恰恰相反，你试过很多方式，也承担了很多。只是到了某个节点，你会发现：继续学更多道理，和真正看清楚自己被什么牵着走，是<span class="font-semibold text-deep-green">两件事</span>。</p>
+        <p>这个 mini offer 不是一个「全部答案」，它是一个<span class="font-semibold text-deep-green">入口</span>。它不会替你走完剩下的路，但它会让你第一次知道自己站在哪里，以及下一步该往哪个方向走。</p>
+        <p class="bg-soft-stone/50 p-6 rounded-lg border border-border-light">现在适合开始的唯一理由是：你已经准备好，从「继续乱修」转向「先看清楚」。</p>
+      </div>
+
+      <button onclick="document.getElementById('faq').scrollIntoView({behavior: 'smooth'})" 
+              class="mt-10 px-8 py-4 bg-deep-green text-warm-cream rounded-full text-lg font-medium transition-all hover:bg-opacity-90 hover:shadow-lg">
+        我现在准备好，开始看见自己的旧模式
+      </button>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-serif font-bold text-deep-green mb-8 text-center">常见问题</h2>
+      <div class="space-y-4">
+        <div class="faq-item bg-white border border-border-light rounded-lg overflow-hidden">
+          <button class="w-full px-6 py-5 text-left flex justify-between items-center gap-4" onclick="this.parentElement.classList.toggle('active')">
+            <span class="font-medium text-text-main">这个 mini offer 和普通的自我提升/疗愈课程有什么不同？</span>
+            <svg class="w-5 h-5 text-text-sub flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="px-6 pb-5 text-text-sub leading-relaxed">
+              它不承诺快速改变，也不提供情绪安慰。它做的是结构识别——把你混乱的内在经验还原成可以命名的旧模式、旧循环和深层根源。看见本身，就是松动的开始。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white border border-border-light rounded-lg overflow-hidden">
+          <button class="w-full px-6 py-5 text-left flex justify-between items-center gap-4" onclick="this.parentElement.classList.toggle('active')">
+            <span class="font-medium text-text-main">我的问题很复杂、很根深蒂固，这份资料能覆盖吗？</span>
+            <svg class="w-5 h-5 text-text-sub flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="px-6 pb-5 text-text-sub leading-relaxed">
+              这个 mini offer 是一个入口和地图，不是全部答案。它帮你定位你现在卡在哪一层、被哪种循环牵着走，让你停止在错误的位置上用力。更深层的工作可能需要后续支持，但你需要先看见结构，才能知道往哪走。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white border border-border-light rounded-lg overflow-hidden">
+          <button class="w-full px-6 py-5 text-left flex justify-between items-center gap-4" onclick="this.parentElement.classList.toggle('active')">
+            <span class="font-medium text-text-main">买完之后，我会得到什么具体改变？</span>
+            <svg class="w-5 h-5 text-text-sub flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="px-6 pb-5 text-text-sub leading-relaxed">
+              你不会"立刻彻底改变"。你会得到一种更清楚的自我认知：能说出"这是我最熟的旧模式，这是它常出现的场景，这是它在我身体里的感觉"。这种清楚，会让你在面对相似情境时，多出一秒的选择空间。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white border border-border-light rounded-lg overflow-hidden">
+          <button class="w-full px-6 py-5 text-left flex justify-between items-center gap-4" onclick="this.parentElement.classList.toggle('active')">
+            <span class="font-medium text-text-main">我现在真的准备好开始了吗？</span>
+            <svg class="w-5 h-5 text-text-sub flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="px-6 pb-5 text-text-sub leading-relaxed">
+              如果你已经厌倦了在同样的地方反复卡住，厌倦了把问题解释成"我性格有问题"，那现在就是合适的时机。开始不需要你完全准备好，只需要你愿意先看见。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white border border-border-light rounded-lg overflow-hidden">
+          <button class="w-full px-6 py-5 text-left flex justify-between items-center gap-4" onclick="this.parentElement.classList.toggle('active')">
+            <span class="font-medium text-text-main">购买后如何获取内容？</span>
+            <svg class="w-5 h-5 text-text-sub flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="px-6 pb-5 text-text-sub leading-relaxed">
+              付款完成后，你将收到邮件获取 5 份 PDF 指南的下载链接。所有内容可立即阅读，按你自己的节奏进行。
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Order Bump -->
+    <section id="order-bump" class="max-w-3xl mx-auto">
+      <div class="relative">
+        <label class="cursor-pointer block">
+          <input type="checkbox" id="bumpToggle" class="order-bump-checkbox hidden" onchange="updateTotal()">
+          <div class="order-bump-content border-2 border-border-light rounded-xl p-6 md:p-8 transition-all duration-200 bg-white">
+            <div class="flex items-start gap-4">
+              <div class="check-circle w-6 h-6 rounded-full border-2 border-text-sub flex items-center justify-center flex-shrink-0 mt-1 transition-colors">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+              </div>
+              <div class="flex-1">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-3">
+                  <h3 class="text-lg font-serif font-semibold text-deep-green">顺手加上：《高敏女性最常见的 7 个旧系统陷阱》</h3>
+                  <span class="text-warm-brown font-semibold text-lg">¥XX</span>
+                </div>
+                <p class="text-text-sub text-sm mb-4 leading-relaxed">
+                  你已经准备好看懂自己的旧模式。这份高频陷阱对照表，帮你在日常关系、情绪和责任边界中，更快认出旧系统每天是怎么抓住你的。7 个具体场景，7 个轻量退出动作。
+                </p>
+                <ul class="space-y-2 text-sm text-text-main">
+                  <li class="flex items-start gap-2">
+                    <span class="text-warm-brown">•</span>
+                    <span><strong>过度共情陷阱：</strong>分辨"这是我的情绪，还是别人的"，建立温和界线</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-warm-brown">•</span>
+                    <span><strong>取悦陷阱：</strong>退出自动 Yes，用"我想一下再告诉你"创造暂停空间</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-warm-brown">•</span>
+                    <span><strong>过度思考陷阱：</strong>从脑中过载回到身体，找到现在真正能做的一个最小动作</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-warm-brown">•</span>
+                    <span><strong>责任陷阱：</strong>分辨责任归属，把不属于自己的事情放回去</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-warm-brown">•</span>
+                    <span><strong>关系误读陷阱：</strong>停止把对方的沉默、冷淡全部归因到自己</span>
+                  </li>
+                </ul>
+                <p class="mt-4 text-xs text-text-sub italic bg-soft-stone/50 p-3 rounded">
+                  现在一起拿到，你在阅读主内容时就能立刻对照日常场景，是最顺畅的开始。
+                </p>
+              </div>
+            </div>
+          </div>
+        </label>
+      </div>
+    </section>
+
+    <!-- 最终结账区 -->
+    <section id="checkout" class="max-w-2xl mx-auto bg-white p-8 md:p-12 rounded-2xl border border-border-light shadow-lg">
+      <h2 class="text-2xl font-serif font-bold text-deep-green mb-2 text-center">确认购买</h2>
+      <p class="text-text-sub text-center mb-8">获取你的旧模式识别地图</p>
+
+      <div class="space-y-4 mb-8 pb-8 border-b border-border-light">
+        <div class="flex justify-between items-center">
+          <span class="text-text-main">旧模式识别地图（5 份 PDF）</span>
+          <span class="font-semibold text-text-main">¥XXX</span>
+        </div>
+        <div id="bumpLine" class="flex justify-between items-center text-text-sub opacity-50 transition-all duration-300">
+          <span>7 个旧系统陷阱对照表</span>
+          <span class="font-semibold">¥XX</span>
+        </div>
+        <div class="flex justify-between items-center text-xl font-bold text-deep-green pt-4">
+          <span>总计</span>
+          <span id="totalPrice">¥XXX</span>
+        </div>
+      </div>
+
+      <form class="space-y-4" onsubmit="event.preventDefault(); alert('这是一个演示页面');">
+        <div>
+          <label class="block text-sm font-medium text-text-sub mb-1">姓名</label>
+          <input type="text" class="w-full px-4 py-3 rounded-lg border border-border-light focus:border-warm-brown focus:ring-1 focus:ring-warm-brown outline-none transition-colors bg-warm-cream" placeholder="你的名字">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-text-sub mb-1">邮箱</label>
+          <input type="email" class="w-full px-4 py-3 rounded-lg border border-border-light focus:border-warm-brown focus:ring-1 focus:ring-warm-brown outline-none transition-colors bg-warm-cream" placeholder="用于接收下载链接">
+        </div>
+        <button type="submit" class="w-full py-4 bg-deep-green text-warm-cream rounded-lg text-lg font-medium transition-all hover:bg-opacity-90 hover:shadow-lg mt-4">
+          确认购买，获取我的旧模式识别地图
+        </button>
+      </form>
+
+      <div class="mt-8 pt-8 border-t border-border-light text-center">
+        <p class="text-sm text-text-sub leading-relaxed">
+          如果你还在犹豫，那也很正常。旧模式的一部分工作，就是让你怀疑"看清了会不会更痛"。<br><br>
+          但真相是：你已经在痛了。而看见，是停止无意识重复的第一步。<br><br>
+          这份地图不会替你走完剩下的路，但它会让你第一次知道，自己到底站在哪里，以及下一步该往哪个方向走。
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="py-12 text-center text-text-sub text-sm border-t border-border-light mt-12">
+    <p> 旧模式识别地图 | 瑞博斯国际</p>
+  </footer>
+
+  <script>
+    function updateTotal() {
+      const checkbox = document.getElementById('bumpToggle');
+      const bumpLine = document.getElementById('bumpLine');
+      const totalPrice = document.getElementById('totalPrice');
+
+      if (checkbox.checked) {
+        bumpLine.classList.remove('opacity-50');
+        bumpLine.classList.add('opacity-100', 'text-text-main');
+      } else {
+        bumpLine.classList.add('opacity-50');
+        bumpLine.classList.remove('opacity-100', 'text-text-main');
+      }
+    }
+  </script>
+</body>
+</html>
